@@ -1,0 +1,20 @@
+html{
+  background: silver;
+}
+
+.card-panel {
+  /*left: calc(50% - 70px);
+  position: relative;*/
+  text-align: center;
+  float: left;
+  margin: 0.33em !important; 
+}
+
+/* Single-direction drop shadow */
+
+hr {
+    height: 12px !important;
+    margin: 10px -20px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0,0,0,0.5);
+}
