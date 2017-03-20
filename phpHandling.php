@@ -34,6 +34,26 @@ header("location:createAccount.php?uError=1");
 
 } 
 
+//Create Project -SMJ
+if(isset($_POST['projectname']))
+{
+
+	$projectname = $_POST['projectname'];
+	
+	$sql = "SELECT * from projects where projectname = '$projectname'";
+	
+	$result = execute_Query(get_connection(), $sql);
+	
+	if(mysqli_num_rows($result)==1){
+		header("location:createProject.php?uError=1");
+	}
+	else{
+		$sql="INSERT INTO projects (projectname, member1) VALUES ('$projectname', '$username')";
+		$result = execute_Query(get_connection(), $sql);
+	}
+	header("location:loginsuccessful.php");
+}
+
 function createAccount($connection, $firstname, $lastname, $username, $password){
 
 
