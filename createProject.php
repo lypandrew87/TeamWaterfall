@@ -38,6 +38,7 @@ if(isset($_GET['uError'])){
   Project Name:<br>
 
   <input  type="text" name="projectname" required ><br><br>
+  <input type="text" name="description" ><br><br>
 
   <input type="submit" value="Submit">
 
