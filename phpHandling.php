@@ -8,7 +8,7 @@ if(isset($_POST['username'] ,$_POST['password']) && !isset( $_POST['firstname'],
   login(get_connection(), $_POST['username'], $_POST['password']); 
 } 
 
-//Create User
+$//Create User
 if(isset($_POST['username'],  $_POST['password'],   $_POST['firstname'],  $_POST['lastname']))
 {
 
@@ -40,6 +40,9 @@ if(isset($_POST['projectname']))
 
 	$projectname = $_POST['projectname'];
 	
+	$description = $_POST['description'];
+	
+	
 	$sql = "SELECT * from projects where projectname = '$projectname'";
 	
 	$result = execute_Query(get_connection(), $sql);
@@ -48,7 +51,7 @@ if(isset($_POST['projectname']))
 		header("location:createProject.php?uError=1");
 	}
 	else{
-		$sql="INSERT INTO projects (projectname, member1) VALUES ('$projectname', '$username')";
+		$sql="INSERT INTO projects (projectname, member1, description) VALUES ('$projectname', '$username', '$description)";
 		$result = execute_Query(get_connection(), $sql);
 	}
 	header("location:loginsuccessful.php");
